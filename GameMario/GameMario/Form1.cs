@@ -13,7 +13,7 @@ namespace GameMario
 	public partial class Form1 : Form
 	{
 		int index=0;
-		int b1 = 0, b2 = 1280;
+		int b1 = 0, b2 = 960;
 		PictureBox c=null;
 		bool right, hold = true;
 		public Form1()

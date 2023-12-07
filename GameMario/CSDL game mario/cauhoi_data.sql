@@ -1,5 +1,4 @@
-﻿
-CREATE DATABASE FTM 
+﻿CREATE DATABASE FTM 
 GO
 USE [FTM]
 
@@ -98,4 +97,5 @@ INSERT INTO CauHoi VALUES (N'Đặc điểm chung của nhóm giải pháp đồ
 INSERT INTO CauHoi VALUES (N'Nếu bảng phân trang được lưu giữ trong bộ nhớ chính thì kích thước của nó sẽ được xác định bởi thành phần nào?','005','TLBs',N'Thanh ghi page-table length',N'Thanh ghi page-table base',N'Số bit dùng để biểu diễn không gian địa chỉ','B')
 INSERT INTO CauHoi VALUES (N'Trong hệ thống máy tính, người dùng phát lệnh cho Hệ điều hành thực thi thông qua lớp nào?','005','Shell','Driver','Kernel','Hardware','A')
 
-select * from Mon
+select * from CauHoi 
+Where MAMON = 1

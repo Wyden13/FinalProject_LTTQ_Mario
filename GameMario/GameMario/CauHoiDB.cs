@@ -12,7 +12,6 @@ namespace GameMario
 		public static DataTable LayDSCauHoi(int mon)
 		{
 			return Database.SelectQuery("select * from CauHoi where MAMON=" + mon);
-			//return Database.SelectQuery("select * from CauHoi where Mon=" + mon);
 		}
 	}
 }

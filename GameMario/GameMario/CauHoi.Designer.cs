@@ -29,101 +29,101 @@ namespace GameMario
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.lb_cauhoi = new System.Windows.Forms.Label();
-			this.rad_A = new System.Windows.Forms.RadioButton();
-			this.rad_B = new System.Windows.Forms.RadioButton();
-			this.rad_C = new System.Windows.Forms.RadioButton();
-			this.rad_D = new System.Windows.Forms.RadioButton();
-			this.button1 = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// lb_cauhoi
-			// 
-			this.lb_cauhoi.BackColor = System.Drawing.Color.Transparent;
-			this.lb_cauhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lb_cauhoi.Location = new System.Drawing.Point(0, 1);
-			this.lb_cauhoi.Name = "lb_cauhoi";
-			this.lb_cauhoi.Size = new System.Drawing.Size(612, 98);
-			this.lb_cauhoi.TabIndex = 0;
-			// 
-			// rad_A
-			// 
-			this.rad_A.AutoSize = true;
-			this.rad_A.BackColor = System.Drawing.Color.Transparent;
-			this.rad_A.Location = new System.Drawing.Point(15, 133);
-			this.rad_A.Name = "rad_A";
-			this.rad_A.Size = new System.Drawing.Size(97, 17);
-			this.rad_A.TabIndex = 1;
-			this.rad_A.TabStop = true;
-			this.rad_A.Text = "radioButton1";
-			this.rad_A.UseVisualStyleBackColor = false;
-			// 
-			// rad_B
-			// 
-			this.rad_B.AutoSize = true;
-			this.rad_B.BackColor = System.Drawing.Color.Transparent;
-			this.rad_B.Location = new System.Drawing.Point(15, 182);
-			this.rad_B.Name = "rad_B";
-			this.rad_B.Size = new System.Drawing.Size(97, 17);
-			this.rad_B.TabIndex = 2;
-			this.rad_B.TabStop = true;
-			this.rad_B.Text = "radioButton2";
-			this.rad_B.UseVisualStyleBackColor = false;
-			// 
-			// rad_C
-			// 
-			this.rad_C.AutoSize = true;
-			this.rad_C.BackColor = System.Drawing.Color.Transparent;
-			this.rad_C.Location = new System.Drawing.Point(15, 236);
-			this.rad_C.Name = "rad_C";
-			this.rad_C.Size = new System.Drawing.Size(97, 17);
-			this.rad_C.TabIndex = 3;
-			this.rad_C.TabStop = true;
-			this.rad_C.Text = "radioButton3";
-			this.rad_C.UseVisualStyleBackColor = false;
-			// 
-			// rad_D
-			// 
-			this.rad_D.AutoSize = true;
-			this.rad_D.BackColor = System.Drawing.Color.Transparent;
-			this.rad_D.Location = new System.Drawing.Point(15, 289);
-			this.rad_D.Name = "rad_D";
-			this.rad_D.Size = new System.Drawing.Size(97, 17);
-			this.rad_D.TabIndex = 4;
-			this.rad_D.TabStop = true;
-			this.rad_D.Text = "radioButton4";
-			this.rad_D.UseVisualStyleBackColor = false;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(256, 365);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(93, 23);
-			this.button1.TabIndex = 5;
-			this.button1.Text = "Trả lời";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// CauHoi
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(612, 400);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.rad_D);
-			this.Controls.Add(this.rad_C);
-			this.Controls.Add(this.rad_B);
-			this.Controls.Add(this.rad_A);
-			this.Controls.Add(this.lb_cauhoi);
-			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Name = "CauHoi";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "CauHoi";
-			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CauHoi_FormClosed);
-			this.Load += new System.EventHandler(this.CauHoi_Load);
-			this.Paint += new System.Windows.Forms.PaintEventHandler(this.CauHoi_Paint);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.lb_cauhoi = new System.Windows.Forms.Label();
+            this.rad_A = new System.Windows.Forms.RadioButton();
+            this.rad_B = new System.Windows.Forms.RadioButton();
+            this.rad_C = new System.Windows.Forms.RadioButton();
+            this.rad_D = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lb_cauhoi
+            // 
+            this.lb_cauhoi.BackColor = System.Drawing.Color.Transparent;
+            this.lb_cauhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cauhoi.Location = new System.Drawing.Point(0, 1);
+            this.lb_cauhoi.Name = "lb_cauhoi";
+            this.lb_cauhoi.Size = new System.Drawing.Size(612, 98);
+            this.lb_cauhoi.TabIndex = 0;
+            // 
+            // rad_A
+            // 
+            this.rad_A.AutoSize = true;
+            this.rad_A.BackColor = System.Drawing.Color.Transparent;
+            this.rad_A.Location = new System.Drawing.Point(15, 133);
+            this.rad_A.Name = "rad_A";
+            this.rad_A.Size = new System.Drawing.Size(122, 21);
+            this.rad_A.TabIndex = 1;
+            this.rad_A.TabStop = true;
+            this.rad_A.Text = "radioButton1";
+            this.rad_A.UseVisualStyleBackColor = false;
+            // 
+            // rad_B
+            // 
+            this.rad_B.AutoSize = true;
+            this.rad_B.BackColor = System.Drawing.Color.Transparent;
+            this.rad_B.Location = new System.Drawing.Point(15, 182);
+            this.rad_B.Name = "rad_B";
+            this.rad_B.Size = new System.Drawing.Size(122, 21);
+            this.rad_B.TabIndex = 2;
+            this.rad_B.TabStop = true;
+            this.rad_B.Text = "radioButton2";
+            this.rad_B.UseVisualStyleBackColor = false;
+            // 
+            // rad_C
+            // 
+            this.rad_C.AutoSize = true;
+            this.rad_C.BackColor = System.Drawing.Color.Transparent;
+            this.rad_C.Location = new System.Drawing.Point(15, 236);
+            this.rad_C.Name = "rad_C";
+            this.rad_C.Size = new System.Drawing.Size(122, 21);
+            this.rad_C.TabIndex = 3;
+            this.rad_C.TabStop = true;
+            this.rad_C.Text = "radioButton3";
+            this.rad_C.UseVisualStyleBackColor = false;
+            // 
+            // rad_D
+            // 
+            this.rad_D.AutoSize = true;
+            this.rad_D.BackColor = System.Drawing.Color.Transparent;
+            this.rad_D.Location = new System.Drawing.Point(15, 289);
+            this.rad_D.Name = "rad_D";
+            this.rad_D.Size = new System.Drawing.Size(122, 21);
+            this.rad_D.TabIndex = 4;
+            this.rad_D.TabStop = true;
+            this.rad_D.Text = "radioButton4";
+            this.rad_D.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(256, 365);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Trả lời";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CauHoi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(612, 400);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rad_D);
+            this.Controls.Add(this.rad_C);
+            this.Controls.Add(this.rad_B);
+            this.Controls.Add(this.rad_A);
+            this.Controls.Add(this.lb_cauhoi);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "CauHoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CauHoi";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CauHoi_FormClosed);
+            this.Load += new System.EventHandler(this.CauHoi_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.CauHoi_Paint);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 

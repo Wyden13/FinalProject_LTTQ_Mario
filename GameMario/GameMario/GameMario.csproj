@@ -159,6 +159,7 @@
     <None Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gengar.gif" />
     <Content Include="Resources\start.ico" />
   </ItemGroup>
   <ItemGroup>
