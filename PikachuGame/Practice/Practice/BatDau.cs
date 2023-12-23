@@ -69,15 +69,12 @@ namespace Practice
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             else
             {
-                MonBus bus = cmb_mon.SelectedItem as MonBus; 
+                MonBus bus = cmb_mon.SelectedItem as MonBus;
                 Mario.x = new nguoichoi(Convert.ToInt32(bus.id));
-                Form1 frm = new Form1(this);
+                Form1 frm = new Form1();
                 frm.GanThongTin(txtTenDN.Text);
+                Hide();
                 frm.ShowDialog();
-                Controls.Remove(this);
-                this.Close();
-
-
             }
         }
         private void btnSetting_Click(object sender, EventArgs e)
