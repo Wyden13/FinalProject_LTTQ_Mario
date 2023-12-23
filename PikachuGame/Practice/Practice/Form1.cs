@@ -21,14 +21,12 @@ namespace Practice
         bool right, hold = true;
      
         int count = 0;
-        BatDau main_form;
         PictureBox c = null;
         PictureBox ghost=null;
         Random rand = new Random();
-        public Form1(BatDau f)
+        public Form1()
         {
             InitializeComponent();
-            main_form = f;
             this.DoubleBuffered = true;
             label3.Visible=false;
             btnRestart.Visible=false;
@@ -240,13 +238,10 @@ namespace Practice
             }
             if (index2 >= 110&&ghost==null)
             {
-                do
-                {
-                    ghost = null;
-                    ghost = khoitaoBongMa();
-                    index2 = 0;
-                }
-                while (check_collision(c, ghost));
+               	ghost = null;
+        	ghost = khoitaoBongMa();
+                index2 = 0;
+
             }
 
             Background_move();
@@ -336,12 +331,10 @@ namespace Practice
         private void btnRestart_Click(object sender, EventArgs e)
         {
             Controls.Remove(this);
-            this.Dispose();
-            this.Close();
-            main_form.Dispose();
-            main_form.Close();
-            BatDau batDau = new BatDau();
-            batDau.ShowDialog();
+	    BatDau batDau = new BatDau();
+	    batDau.Show();
+	    this.Dispose();
+	    this.Close();
         } 
     }
 }
