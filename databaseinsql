@@ -1,0 +1,274 @@
+CREATE DATABASE FTM 
+USE FTM
+
+
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+
+CREATE TABLE Mon
+(
+MAMON INT NOT NULL PRIMARY KEY,
+TEN NVARCHAR(50),
+)
+
+
+CREATE TABLE CauHoi
+(
+ NOIDUNG NVARCHAR(3000) NOT NULL,
+ MAMON INT NOT NULL, 
+ DA1 NVARCHAR(3000),
+ DA2 NVARCHAR(3000),
+ DA3 NVARCHAR(3000),
+ DA4 NVARCHAR(3000),
+ DA CHAR NOT NULL,
+)
+
+ALTER TABLE CauHoi 
+ADD CONSTRAINT FK_CH_M_MAMON FOREIGN KEY (MAMON) REFERENCES Mon(MAMON)
+
+INSERT INTO Mon VALUES ('001',N'Nhập môn lập trình')
+INSERT INTO Mon VALUES ('002', N'Lập trình hướng đối tượng')
+INSERT INTO Mon VALUES ('003',N'Cấu trúc dữ liệu và giải thuật')
+INSERT INTO Mon VALUES ('004', N'Nhập môn mạng máy tính')
+INSERT INTO Mon VALUES ('005', N'Hệ điều hành')
+INSERT INTO Mon VALUES ('006', N'Tất cả các môn')
+
+SELECT * FROM CAUHOI
+
+INSERT INTO CauHoi VALUES (N'Độ ưu tiên đúng đối với các toán tử logic là:','001','AND, NOT, OR', 'NOT, OR, AND','OR, NOT, AND','NOT, AND, OR','D')
+INSERT INTO CauHoi VALUES (N'Sử dụng khai báo “double a[12]”, phần tử a[7] là phần tử thứ bao nhiêu trong mảng a:', '001','6','7','8','9', 'C')
+INSERT INTO CauHoi VALUES (N'Phép trừ 1 con trỏ với một số nguyên sẽ là: ','001', N'Một số nguyên', N'Một con trỏ cùng kiểu',N'Cả hai đều đúng',N'Đáp án khác','B')
+INSERT INTO CauHoi VALUES (N'Kích thước của biến con trỏ là: ','001', '2 byte','1 byte', '4 byte', '3 byte', 'A')
+INSERT INTO CauHoi VALUES (N'Giá trị logic của biểu thức sau là gì: !(1&&1||1&&0): ', '001', '1', '0','-1', 'Lỗi','B')
+INSERT INTO CauHoi VALUES (N'Cho biết giá trị của biểu thức 5>1:','001','1','-1','0','2','A')
+INSERT INTO CauHoi VALUES (N'Biến con trỏ có thể chứa: ','001',N'Địa chỉ vùng nhớ của một biến khác',N'Giá trị của một biến khác',N'Cả hai đều đúng',N'Cả hai đều sai','A')
+INSERT INTO CauHoi VALUES (N'Nếu hàm được gọi trước khi nó định nghĩa thì điều kiện là gì ','001',N'Kiểu trả về của hàm phải là kiểu void',N'Kiểu đầu vào của hàm phải là kiểu void',N'Trước khi gọi hàm nó phải được khai báo',N'Hàm chỉ trả về kiểu dữ liệu boolean','C')
+INSERT INTO CauHoi VALUES (N'Lệnh nào trong các lệnh sau cho phép chuyển sang vòng lặp tiếp theo mà không cần phải thực hiện phần còn lại của vòng lặp:','001','break','go to','continue','return','C')
+INSERT INTO CauHoi VALUES (N'Giả sử có câu lệnh ch=’A’. Vậy ch sẽ chứa bao nhiêu byte :','001','1','2','3','4','A')
+INSERT INTO CauHoi VALUES (N'Giả sử có câu lệnh ch[]= "A". ch chứa bao nhiêu bytes :','001','1','2','3','4','B')
+INSERT INTO CauHoi VALUES (N'Khai báo “int array[3][5]” có nghĩa là:','001',N'Các phần tử của mảng là các số nguyên',N'Là một mảng hai chiều tối đa là 15 phần tử và mỗi phần tử là một số nguyên',N'array[3][5] là 1 phần tử của mảng',N'Tất cả đều sai','B')   
+INSERT INTO CauHoi VALUES (N'Phép toán 1 ngôi nào dùng để xác định địa chỉ của đối tượng mà con trỏ chỉ tới:','001','*','!','&',N'Khác','C')
+INSERT INTO CauHoi VALUES (N'Toán tử “++n” được hiểu','001',N'Giá trị n giảm đi sau khi giá trị của nó được sử dụng',N'Giá trị n giảm đi trước khi giá trị của nó được sử dụng',N'Giá trị của n được tăng sau khi giá trị của nó được sử dụng.',N'Giá trị của n được tăng lên trước khi giá trị của nó được sử dụng.','D')
+INSERT INTO CauHoi VALUES (N'Đoạn code nào sẽ hoán vị 2 số a và b:','001','t=a; a=b; b=t;','t=a; a=b; t=b;','a=t; b=a; t=b;','t=b; b=a; a=t;','A')
+
+
+INSERT INTO CauHoi VALUES (N'Trừu tượng hóa là: ', '002', N'Phương pháp quan tâm đến mọi chi tiết của đối tượng.',N'Phương pháp chỉ quan tâm đến những chi tiết cần thiết (chi tiết chính) và bỏ qua những chi tiết không cần thiết.',N'Phương pháp thay thế những chi tiết chính bằng những chi tiết tương tự.',N'Không có đáp án đúng','B')
+INSERT INTO CauHoi VALUES (N'Khi khai báo thành phần thuộc tính và phương thức của lớp , nếu không khai báo từ khóa private,  public, hay protected thì mặc định sẽ là:','002','private', 'public', 'protected',N'Lỗi, cần khai báo 1 trong 3','A')
+INSERT INTO CauHoi VALUES (N'Từ khóa nào sau đây được dùng khi lớp con muốn cài lại phương thức được thừa kế từ lớp cha: ','002','New', 'Virtual','Override','Abstract','C') 
+INSERT INTO CauHoi VALUES (N'OOP là viết tắt của: ', '002','Object Open Programming', 'Object Oriented Programming', 'Object Oriented Proccessing','Open Object Programming', 'B')
+INSERT INTO CauHoi VALUES (N'Đặc điểm của Tính đa hình?', '002', N'Khả năng một hàm, thủ tục có thể được kế thừa lại', N'Khả năng một thông điệp có thể được truyền lại cho lớp con của nó',N'Khả năng một hàm, thủ tục được sử dụng lại',N'Khả năng một thông điệp có thể thay đổi cách thể hiện của nó theo lớp cụ thể của đối tượng được nhận thông điệp','D')
+INSERT INTO CauHoi VALUES (N'Đặc điểm cơ bản của lập trình hướng đối tượng thể hiện ở:','002',N'Tính đóng gói, tính kế thừa, tính đa hình, tính đặc biệt hóa',N'Tính đóng gói , tính trừu tượng',N'Tính chia nhỏ, tính kế thừa',N'Tính đóng gói, tính kế thừa, tính đa hình, tính trừu tượng','D')
+INSERT INTO CauHoi VALUES (N'Hãy chọn câu trả lời đúng: ','002',N'Ngôn ngữ lập trình C, C++, C# là ngôn ngữ lập trình cấu trúc',N'Ngôn ngữ lập trình C# , C++ là ngôn ngữ lập trình hướng đối tượng',N'Ngôn ngữ lập trình pascal, C là ngôn ngữ lập trình cấu trúc',N'Ngôn ngữ lập trình C++, Java là ngôn ngữ lập trình cấu trúc','C')
+INSERT INTO CauHoi VALUES (N'Sự đóng gói còn gọi là: ','002','Polymorphism','Abstraction','Encapsulation','Inheritance','C')
+INSERT INTO CauHoi VALUES (N'Sự trừu tượng còn gọi là','002','Polymorphism','Abstraction','Encapsulation','Inheritance','B')
+INSERT INTO CauHoi VALUES (N'Sự kế thừa còn gọi là','002','Polymorphism','Abstraction','Encapsulation','Inheritance','D')
+INSERT INTO CauHoi VALUES (N'Tính đa hình còn gọi là','002','Polymorphism','Abstraction','Encapsulation','Inheritance','A')
+INSERT INTO CauHoi VALUES (N'Lớp đối tượng là: ','002',N'Một thể hiện cụ thể cho các đối tượng',N'Tập các phần tử cùng loại',N'Tập các giá trị cũng loại',N'Một thiết kế hay mẫu cho các đối tượng cũng kiểu','D')
+INSERT INTO CauHoi VALUES (N'Đối tượng là:','002',N'Một thực thể cụ thể trong thế giới thực',N'Một lớp vật chất trong thế giới thực',N'Một vật chất trong thế giới thực',N'Một mẫu hay một thiết kế cho mọi lớp đối tượng','A')
+INSERT INTO CauHoi VALUES (N'Chọn câu đúng:','002',N'Tại chương trình chính chỉ có thể truy cập đến thành phần public của lớp',N'Tại chương trình chính chỉ có thể truy cập đến thành phần private của lớp',N'Tại chương trình chính chỉ có thể truy cập đến bất kì thành phần nào của lớp',N'Tại chương trình chính không thể truy cập đến bất kì thành phần nào của lớp','A')
+INSERT INTO CauHoi VALUES (N'Trong một chương trình có thể xây dựng tối đa bao nhiêu lớp:','002',N'1 lớp duy nhát','3','10',N'tùy bộ nhớ','D')
+
+
+
+
+INSERT INTO CauHoi VALUES (N'Thao tác POP(x) dùng trong Stack là để:', '003', N'Xóa bỏ một phần tử bất kì khỏi Stack', N'Xóa bỏ một dãy các phần tử ra khỏi Stack', N'Lấy phần tử đầu tiên ra khỏi Stack', N'Lấy một phần tử cuối cùng ra khỏi đỉnh Stack', 'D')
+INSERT INTO CauHoi VALUES (N'Thao tác Push(x) dùng trong Stack là để:','003',N'Bổ sung một dãy các phần tử vào đỉnh Stack',N'Bổ sung một phần tử bất kì vào Stack',N'Bổ sung một phần tử vào đỉnh Stack',N'Bổ sung một phần tử vào đầu Stack','C')
+INSERT INTO CauHoi VALUES (N'Cho Stack gồm 5 phần tử {12, 5, 20, 23, 25}, trong đó 25 là phần tử ở đỉnh Stack. Để lấy ra phần tử thứ 4 trong Stack ta phải làm thế nào?', '003','POP(25),POP(23), PUSH(25)','POP(23),PUSH(25)','POP(25),PUSH(23)','POP(25),POP(23)','A')
+INSERT INTO CauHoi VALUES (N'Trong biểu diễn dữ liệu dưới dạng cây, cấp của cây chính: ','003',N'Tổng số nút trên cây',N'Cấp cao nhất của nút gốc', N'Cấp cao nhất của nút lá',N'Cấp cao nhất của một nút trên cây','D')
+INSERT INTO CauHoi VALUES (N'Trong các giải thuật sắp xếp, giải thuật nào áp dụng phương pháp "Chia để trị"?', '003', N'Quick sort, Heap sort', 'Quick sort, Insert sort', 'Quick sort, Merge sort', 'Quick sort, Bubble sort', 'C')
+INSERT INTO CauHoi VALUES (N'Hàng đợi còn được gọi là danh sách kiểu: ','003','LIFO','FILO','LOLO','FIFO','D')
+INSERT INTO CauHoi VALUES (N'Ý tưởng phương pháp sắp xếp nổi bọt (bubble sort) là: ','003',N'So sánh hai phần tử kề nhau nếu chưa đúng thì đổi chỗ',N'Dựa vào tư tưởng "chia để trị"',N'Chọn phần tử bé nhất xếp vào vị trí thứ nhất,tương tự đối với phần tử nhỏ thứ hai,ba...',N'Lần lượt lấy phần tử của danh sách chèn vị trí thích hợp của danh sách đã sắp','A')
+INSERT INTO CauHoi VALUES (N'Giải thuật đệ quy là:','003',N'Trong giải thuật của nó có lời gọi tới một giải thuật khác đã biết kết quả',N'Trong giải thuật của nó có lời gọi tới chính nó nhưng với phạm vi lớn hơn',N'Trong giải thuật của nó có lời gọi tới chính nó',N'Trong giải thuật của nó có lời gọi tới chính nó nhưng với phạm vi nhỏ hơn','D')
+INSERT INTO CauHoi VALUES (N'Danh sách tuyến tính dạng ngăn xếp làm việc theo nguyên tắc:','003','FIFO','LIFO','LILO','FOLO','B')
+INSERT INTO CauHoi VALUES (N'Trong biểu diễn dữ liệu dưới dạng cây, nút có cấp bằng 0 gọi là:','003',N'Lá',N'Gốc',N'Ngọn',N'Nhánh','A')
+INSERT INTO CauHoi VALUES (N'Khi lưu trữ cây nhị phân dưới dạng mảng, nếu vị trí của nút cha trong mảng là i thì vịtrí của nút con trái là:','003','2*i+1','i+1','2*i','i-1','C')
+INSERT INTO CauHoi VALUES (N'Khi lưu trữ cây nhị phân dưới dạng mảng, nếu vị trí của nút cha trong mảng là 3 thì vị trí tương ứng của nút con trái sẽ là:','003','7','6','2','4','B')
+INSERT INTO CauHoi VALUES (N'Khi lưu trữ cây nhị phân dưới dạng mảng, nếu vị trí của nút cha trong mảng là 3 thì vị trí tương ứng của nút con phải  sẽ là:','003','7','6','2','4','A')
+INSERT INTO CauHoi VALUES (N'Phương pháp sắp xếp nhanh (Quick sort) chính là phương pháp:','003',N'Phân đoạn',N'Chèn',N'Trộn',N'Vun đống','A')
+INSERT INTO CauHoi VALUES (N'Cho dãy số sau: 14 32 10 43 57 87 55 36 97 11. Áp dụng phương pháp tìm kiếm tuần tự, sau bao nhiều lần thực hiện phép so sánh ta sẽ tìm thấy số 43?','003','2','3','4','5','C')
+INSERT INTO CauHoi VALUES (N'Cho dãy số sau: 14 32 10 43 57 87 55 36 97 11. Áp dụng phương pháp tìm kiếm nhị phân, sau bao nhiều lần thực hiện phép so sánh ta sẽ tìm thấy số 43?','003','2','3','4','5','B')
+INSERT INTO CauHoi VALUES (N'Cho dãy số sau: 10 11 14 32 36 43 55 57 87 97. Áp dụng phương pháp tìm kiếm nhị phân, để tìm kiếm số 97, lần phân đoạn thứ hai của dãy sẽ là:','003','[36 97 11]','[36 11]','[36 97]','[87 97]','D')
+
+
+INSERT INTO CauHoi VALUES (N'Giao thức nào thuộc tầng Application?','004','TCP','HTTP','NFS','IP','B')
+INSERT INTO CauHoi VALUES (N'Địa chỉ IPv6 gồm bao nhiêu bit', '004','32','48','64','128','D')
+INSERT INTO CauHoi VALUES (N'TCP làm việc ở lớp nào của mô hình OSI?','004','Layer 4','Layer 5','Layer 6','Layer 7','A')
+INSERT INTO CauHoi VALUES (N'Để kết nối Router với Router ta dùng:','004',N'Cáp chéo (Cross-Cable)',N'Cáp thẳng (Straight Cable)','Rollover Cable',N'Tất cả đều sai','A')
+INSERT INTO CauHoi VALUES (N'Lệnh nào sau đây cho biết địa chỉ IP của máy tính:','004','IP','IPCONFIG','FTP','TCP_IP','B')
+INSERT INTO CauHoi VALUES (N'Checksum trong gói dữ liệu UDP có độ dài:','004','4 bit','8 bit', '16 bit','32 bit', 'B')
+INSERT INTO CauHoi VALUES (N'SMTP sử dụng cổng số bao nhiêu:','004','143','25','80','225','B')
+INSERT INTO CauHoi VALUES (N'Phản hồi nào cho biết client đang yêu cầu thông điệp không tồn tại trên máy chủ?','004','200 OK','400 Bad Request','301 Moved Permanently','404 Not Found','D')
+INSERT INTO CauHoi VALUES (N'Các đơn vị dữ liệu giao thức trong mô hình OSI được gọi là:','004','UDP','OSI','PDU','Packet','C')
+INSERT INTO CauHoi VALUES (N'Trong giao thức HTTP, phương thức nào được sử dụng để yêu cầu dữ liệu từ máy chủ?','004','GET','POST','PUT','DELETE','A')
+INSERT INTO CauHoi VALUES (N'Trong giao thức DNS, bản ghi nào được sử dụng để ánh xạ tên miền thành địa chỉ IP?','004','A','CNAME','MX','PTR','A')
+INSERT INTO CauHoi VALUES (N'RDT sử dụng cơ chế nào để đồng bộ hóa quá trình truyền tin giữa người gửi và người nhận?','004','Go-Back-N','Selective Repeat','Stop-and-Wait','Piggybacking','C')
+INSERT INTO CauHoi VALUES (N'Thứ tự đúng từ trên xuống dưới trong mô hình chồng giao thức Internet phân tầng','004','Application – Transport – Network – Physical – Link','Physical – Link – Network – Transport - Application',' Application – Network – Transport – Link - Physical
+','Application – Transport – Network – Link – Physical','D')
+INSERT INTO CauHoi VALUES (N'Băng thông là gì?','004',N'Tốc độ (đơn vị bits/sec) mà tại đó các bits được truyền',N'Khoảng thời gian truyền mỗi gói tin trên mạng',N'Thời gian chờ của mỗi gói tin khi truyền đi',N'Lượng dữ liệu truyền tối đa trong một đơn vị thời gian','D')
+INSERT INTO CauHoi VALUES (N'Độ trễ mạng là gì?','004',N'Là khoảng thời gian truyền mỗi gói tin trên mạng',N'Tốc độ truyền mỗi gói tin chậm hơn so với bình thường',N'Hàng đợi bị đầy, nên gây hiện tượng trễ mạng',N'Gói tin bị mất trong quá trình truyền dữ liệu','B')
+INSERT INTO CauHoi VALUES (N'Mô hình OSI có bao nhiêu lớp: ','004','5','7','6','8','B')
+INSERT INTO CauHoi VALUES (N'Khi gói dữ liệu di chuyển từ lớp cao xuống lớp thấp hơn thì các header được:','004',N'Loại bỏ dần',N'Thêm vào dần',N'Sắp xếp lại',N'Đổi vị trí','B')
+INSERT INTO CauHoi VALUES (N'Trong RDT, việc xác định thứ tự của các gói tin dựa trên cơ chế nào?','004','Sequence Number','Acknowledgment','Window Size','Timeout','A')
+INSERT INTO CauHoi VALUES (N'Đơn vị dữ liệu theo các tầng trong mô hình TCP/IP: ','004','Data, Packet, Segment, Bit, Frame','Data, Packet, Segment, Frame, Bit','Data, Segment, Packet, Frame, Bit',' Data, Segment, Packet, Bit, Frame','C')
+INSERT INTO CauHoi VALUES (N'Trong giao thức FTP (File Transfer Protocol), cổng kết nối dữ liệu TCP trên máy chủ là:','004','20','21','22','23','A')
+INSERT INTO CauHoi VALUES (N'Truy cập vào trang web 4 lần với 4 mqax trạng thái lần lượt nhận là 200,304,404,502, số lân xem nội dung web thành công là?','004','1','2','3','4','B')
+INSERT INTO CauHoi VALUES (N'Mục đích số port trong header của TCP và UDP là gì?','004',N'Bắt đầu quá trình bắt tay 3 bước',N'Tập hợp các segment cho đúng thứ tự',N'Xác định số lượng segment có thể gửi được cùng lức mà không cần ACK',N'Xác định tiến trình đang gửi nhận dữ liệu','D')
+INSERT INTO CauHoi VALUES (N'Giao thức RDT nào cung cấp dịch vự giao hàng tin cậy','004','RDT 1.0','RDT 2.1','RDT 2.2','RDT 3.0','D')
+
+
+
+INSERT INTO CauHoi VALUES (N'Chọn phát biểu SAI về các tác vụ đối với tiến trình?','005',N' Tiến trình con nhận tài nguyên từ hệ điều hành hoặc từ tiến trình cha.',N'Không gian địa chỉ của tiến trình con luôn được nhân bản từ tiến trình cha.',N'Tiến trình có thể tự kết thúc hoặc bị kết thúc bởi tiến trình khác.',N'Tiến trình con chỉ có thể sử dụng một phần hoặc toàn bộ tài nguyên của tiến trình cha','B')
+INSERT INTO CauHoi VALUES (N'Chọn phát biểu ĐÚNG về cơ chế phân trang?','005',N'Bộ nhớ vật lý được chia thành các khung trang còn bộ nhớ luận lý được chia thành các trang',N' Hệ điều hành tạo một bảng phân trang cho tất cả các tiến trình',N'Thanh ghi page-table length (PTLR) xác định vị trí của bảng phân trang',N'Kích thước của bảng phân trang được xác định bởi thanh ghi page-table base (PTBR)','A')
+INSERT INTO CauHoi VALUES (N'Các giải pháp đồng bộ được chia thành những nhóm nào?','005','Busy Waiting – Sleep & Wakeup','Busy Waiting –Circular Wait','Sleep & Wakeup – Hold & Wait','Sleep & Wakeup – Mutual Exclusion','A')
+INSERT INTO CauHoi VALUES (N'Chọn phát biểu SAI trong các phát biểu sau?','005',N'Nếu hệ thống đang ở trạng thái an toàn thì tồn tại ít nhất một chuỗi thứ tự an toàn trong hệ thống',N'Nếu đồ thị cấp phát tài nguyên có chu trình thì có deadlock xảy ra',N'Nếu hệ thống đang ở trạng thái không an toàn thì có thể xảy ra deadlock',N'Một tiến trình gọi là deadlock nếu nó đang đợi một sự kiện mà sẽ không bao giờ xảy ra','B')
+INSERT INTO CauHoi VALUES (N'Kỹ thuật cài đặt bộ nhớ ảo nào sau đây cho phép các trang của tiến trình chỉ được nạp vào bộ nhớ chính khi được yêu cầu?','005','Dynamic loading','Dynamic linking','Demand paging','Frame allocation','C')
+INSERT INTO CauHoi VALUES (N'Trong giải thuật thay trang LRU, trang được chọn để thay thế có đặc điểm gì?','005',N'Trang nhớ có thời điểm tham chiếu nhỏ nhất',N'Trang nhớ được tham chiếu trễ nhất trong tương lai',N'Trang nhớ đầu tiên được nạp vào hệ thống',N'Trang nhớ vừa được thay thế gần đây nhất','A')
+INSERT INTO CauHoi VALUES (N'“Không cho phép (ít nhất) một trong 4 điều kiện cần cho deadlock” là đặc điểm của phương pháp giải quyết deadlock nào?','005',N'Tránh deadlock',N'Ngăn deadlock',N'Bỏ qua deadlock',N'Phát hiện deadlock và phục hồi hệ thống','B')
+INSERT INTO CauHoi VALUES (N'Địa chỉ lệnh và dữ liệu có thể được chuyển đổi thành địa chỉ thực tại thời điểm biên dịch nếu thỏa mãn điều kiện nào?','005',N'Địa chỉ nạp chương trình (trong bộ nhớ) phải được biết trước',N'Kích thước chương trình phải được biết trước',N'Bộ nhớ phải được chia thành các phân vùng có kích thước bằng nhau',N'Trong quá trình thực thi, tiến trình chỉcó thể di chuyển trên một tập các trang nhớ cho trước','A')
+INSERT INTO CauHoi VALUES (N'Lựa chọn nào dưới đây KHÔNG phải là một mô hình đa tiểu trình?','005','Many-to-One','One-to-One','Many-to-Many','One-to-Many','D')
+INSERT INTO CauHoi VALUES (N'Tiến trình ở trạng thái terminated khi nào?','005',N'Tiến trình vừa được tạo',N'Tiến trình đã có đủ tài nguyên, chỉ còn cần CPU',N'Tiến trình đã kết thúc',N'Các lệnh của tiến trình đang được thực thi','C')
+INSERT INTO CauHoi VALUES (N'Kiểu cấu trúc hệ điều hành nào là sự kết hợp nhiều cách tiếp cận để giải quyết các nhu cầu về hiệu suất, bảo mật, nhu cầu sử dụng?','005',N'Cấu trúc modules',N'Cấu trúc phân lớp (layer)',N'Cấu trúc vi nhân',N'Cấu trúc lai (hybrid)','D')
+INSERT INTO CauHoi VALUES (N'Kiểu cấu trúc hệ điều hành nào sử dụng cách tiếp cận hướng đối tượng với mỗi core thành phần là tách biệt nhau?','005',N'Cấu trúc modules',N'Cấu trúc phân lớp (layer)',N'Cấu trúc vi nhân',N'Cấu trúc Monolithic','A')
+INSERT INTO CauHoi VALUES (N'Trong tiến trình đa luồng, các tiểu trình KHÔNG chia sẻ chung thành phần nào dưới đây?','005','Code','Data','Registers','Resources (files)','A')
+INSERT INTO CauHoi VALUES (N'Khi một tiến trình được nạp vào bộ nhớ, các biến cục bộ của nó được chứa ở đâu?','005','Stack section','Data section','Text section','Heap section','C')
+INSERT INTO CauHoi VALUES (N'Lời gọi hệ thống chủ yếu được truy cập thông qua phương tiện nào?','005','Graphics User Interface','Command Line Interface','Application Programming Interface','Command Line Interpreter','C')
+INSERT INTO CauHoi VALUES (N'Cơ chế kết khối có thể được sử dụng để giải quyết vấn đề nào dưới đây?','005',N'Phân mảnh ngoại',N'Phân mảnh nội',N'Lỗi trang',N'Các trang nhớ bị hoán chuyển vào ra liên tục','A')
+INSERT INTO CauHoi VALUES (N'Đoạn mã chứa các thao tác lên dữ liệu chia sẻ trong mỗi tiến trình được gọi là gì?','005',N'Vùng tranh chấp',N'Loại trừ tương hỗ',N'Deadlock',N'Chuỗi an toàn','A')
+INSERT INTO CauHoi VALUES (N'Đặc điểm chung của nhóm giải pháp đồng bộ “Sleep & Wakeup” là gì?','005',N'Tiến trình tiếp tục tiêu thụCPU khi chưa được vào vùng tranh chấp',N'Cần có sự hỗ trợ của hệ điều hành',N'Cần có sự hỗ trợ của phần cứng',N'Không bao giờ xảy ra tình trạng đói tài nguyên','B')
+INSERT INTO CauHoi VALUES (N'Nếu bảng phân trang được lưu giữ trong bộ nhớ chính thì kích thước của nó sẽ được xác định bởi thành phần nào?','005','TLBs',N'Thanh ghi page-table length',N'Thanh ghi page-table base',N'Số bit dùng để biểu diễn không gian địa chỉ','B')
+INSERT INTO CauHoi VALUES (N'Trong hệ thống máy tính, người dùng phát lệnh cho Hệ điều hành thực thi thông qua lớp nào?','005','Shell','Driver','Kernel','Hardware','A')
+INSERT INTO CauHoi VALUES (N'“Cấp phát không gian lưu trữ” là một trong những chức năng của thành phần nào trong hệ điều hành?','005',N'Quản lý bộ nhớ chính',N'Quản lý hệ thống lưu trữ thứ cấp',N'Quản lý hệ thống I/O',N'Quản lý tiến trình','B')
+INSERT INTO CauHoi VALUES (N'Bộ định thời nào có chức năng xác định chương trình được chấp nhận nạp vào hệ thống để thực thi?','005',N'Bộ định thời ngắn',N'Bộ định thời dài', N'Bộ định thời trung gian',N'Bộ định thời thiết bị','B')
+INSERT INTO CauHoi VALUES (N'Định thời theo cách tiếp cận đa xử lý đối xứng có đặc điểm nào dưới đây?','005',N'Chỉ một bộ xử lý truy xuất dữ liệu hệ thống, không cần chia sẻ dữ liệu',N'Mỗi bộ xử lý tự định thời cho chính nó',N'Tất cả các thao tác lập lịch, xử lý I/O được thực hiện bởi một bộ xử lý (master server)',N'Master server có thể bị nghẽn cổ chai (bottleneck), làm giảm hiệu năng của hệ thống','B')
+INSERT INTO CauHoi VALUES (N'“Cung cấp cơ chế kiểm soát đăng nhập/ xuất” là một trong những nhiệm vụ của thành phần nào trong hệ điều hành?','005',N'Quản lý bộ nhớ chính',N'Hệ thống thông dịch lệnh',N'Quản lý tiến trình',N'Hệ thống bảo vệ','D')
+INSERT INTO CauHoi VALUES (N'Bộ định thời ngắn được sử dụng để làm gì?', '005',N'Quyết định tiến trình nào được đưa vào (swap in) và đưa ra khỏi (swap out) bộ nhớ chính trong quá trình thực thi của hệ thống',N' Xác định tiến trình nào trong hàng đợi sẵn sàng (ready queue) sẽ được chiếm CPU để thực thi kế tiếp',N'Xác định chương trình nào được chấp nhận nạp vào hệ thống để thực thi',N'Xử lý các thao tác nhập/xuất','B')
+INSERT INTO CauHoi VALUES (N'Dispatch latency là gì?','005',N'Thời gian từlúc tiến trình nhận yêu cầu cho đến khi được đáp ứng lần đầu',N'Thời gian mà bộ định thời dừng một tiến trình và khởi động một tiến trình khác',N'Tổng thời gian một tiến trình đợi trong hàng đợi ready',N'Thời điểm thực thi hàm lựa chọn','B')
+INSERT INTO CauHoi VALUES (N'Bộ định thời nào có chức năng chuyển tiến trình từ bộ nhớ sang đĩa cũng như chuyển tiến trình từ đĩa vào bộ nhớ?','005','Medium-term scheduler','Short-term scheduler','Long-term scheduler','Job scheduler','A')
+INSERT INTO CauHoi VALUES (N'Các máy tính trong hệ thống đều ngang hàng nhau; Không có cơ sở dữ liệu tập trung. Là loại mô hình hệ thống phân tán nào dưới đây?', '005','Client - server','peer - to - peer','Symmetric multiprocessor','Master-slave','B')
+INSERT INTO CauHoi VALUES (N'Để cho phép một tiến trình đợi trong monitor, cần phải khai báo loại biến nào?','005',N'Biến điều kiện', N'Biến cục bộ',N'Biến hàng đợi', N'Biến thủ tục','A')
+
+
+
+
+
+
+INSERT INTO CauHoi VALUES (N'Độ ưu tiên đúng đối với các toán tử logic là:','006','AND, NOT, OR', 'NOT, OR, AND','OR, NOT, AND','NOT, AND, OR','D')
+INSERT INTO CauHoi VALUES (N'Sử dụng khai báo “double a[12]”, phần tử a[7] là phần tử thứ bao nhiêu trong mảng a:', '006','6','7','8','9', 'C')
+INSERT INTO CauHoi VALUES (N'Phép trừ 1 con trỏ với một số nguyên sẽ là: ','006', N'Một số nguyên', N'Một con trỏ cùng kiểu',N'Cả hai đều đúng',N'Đáp án khác','B')
+INSERT INTO CauHoi VALUES (N'Kích thước của biến con trỏ là: ','006', '2 byte','1 byte', '4 byte', '3 byte', 'A')
+INSERT INTO CauHoi VALUES (N'Giá trị logic của biểu thức sau là gì: !(1&&1||1&&0): ', '006', '1', '0','-1', 'Lỗi','B')
+INSERT INTO CauHoi VALUES (N'Cho biết giá trị của biểu thức 5>1:','006','1','-1','0','2','A')
+INSERT INTO CauHoi VALUES (N'Biến con trỏ có thể chứa: ','006',N'Địa chỉ vùng nhớ của một biến khác',N'Giá trị của một biến khác',N'Cả hai đều đúng',N'Cả hai đều sai','A')
+INSERT INTO CauHoi VALUES (N'Nếu hàm được gọi trước khi nó định nghĩa thì điều kiện là gì ','006',N'Kiểu trả về của hàm phải là kiểu void',N'Kiểu đầu vào của hàm phải là kiểu void',N'Trước khi gọi hàm nó phải được khai báo',N'Hàm chỉ trả về kiểu dữ liệu boolean','C')
+INSERT INTO CauHoi VALUES (N'Lệnh nào trong các lệnh sau cho phép chuyển sang vòng lặp tiếp theo mà không cần phải thực hiện phần còn lại của vòng lặp:','006','break','go to','continue','return','C')
+INSERT INTO CauHoi VALUES (N'Giả sử có câu lệnh ch=’A’. Vậy ch sẽ chứa bao nhiêu byte :','006','1','2','3','4','A')
+INSERT INTO CauHoi VALUES (N'Giả sử có câu lệnh ch[]= "A". ch chứa bao nhiêu bytes :','006','1','2','3','4','B')
+INSERT INTO CauHoi VALUES (N'Khai báo “int array[3][5]” có nghĩa là:','006',N'Các phần tử của mảng là các số nguyên',N'Là một mảng hai chiều tối đa là 15 phần tử và mỗi phần tử là một số nguyên',N'array[3][5] là 1 phần tử của mảng',N'Tất cả đều sai','B')   
+INSERT INTO CauHoi VALUES (N'Phép toán 1 ngôi nào dùng để xác định địa chỉ của đối tượng mà con trỏ chỉ tới:','006','*','!','&',N'Khác','C')
+INSERT INTO CauHoi VALUES (N'Toán tử “++n” được hiểu','006',N'Giá trị n giảm đi sau khi giá trị của nó được sử dụng',N'Giá trị n giảm đi trước khi giá trị của nó được sử dụng',N'Giá trị của n được tăng sau khi giá trị của nó được sử dụng.',N'Giá trị của n được tăng lên trước khi giá trị của nó được sử dụng.','D')
+INSERT INTO CauHoi VALUES (N'Đoạn code nào sẽ hoán vị 2 số a và b:','006','t=a; a=b; b=t;','t=a; a=b; t=b;','a=t; b=a; t=b;','t=b; b=a; a=t;','A')
+
+
+INSERT INTO CauHoi VALUES (N'Trừu tượng hóa là: ', '006', N'Phương pháp quan tâm đến mọi chi tiết của đối tượng.',N'Phương pháp chỉ quan tâm đến những chi tiết cần thiết (chi tiết chính) và bỏ qua những chi tiết không cần thiết.',N'Phương pháp thay thế những chi tiết chính bằng những chi tiết tương tự.',N'Không có đáp án đúng','B')
+INSERT INTO CauHoi VALUES (N'Khi khai báo thành phần thuộc tính và phương thức của lớp , nếu không khai báo từ khóa private,  public, hay protected thì mặc định sẽ là:','006','private', 'public', 'protected',N'Lỗi, cần khai báo 1 trong 3','A')
+INSERT INTO CauHoi VALUES (N'Từ khóa nào sau đây được dùng khi lớp con muốn cài lại phương thức được thừa kế từ lớp cha: ','006','New', 'Virtual','Override','Abstract','C') 
+INSERT INTO CauHoi VALUES (N'OOP là viết tắt của: ', '006','Object Open Programming', 'Object Oriented Programming', 'Object Oriented Proccessing','Open Object Programming', 'B')
+INSERT INTO CauHoi VALUES (N'Đặc điểm của Tính đa hình?', '006', N'Khả năng một hàm, thủ tục có thể được kế thừa lại', N'Khả năng một thông điệp có thể được truyền lại cho lớp con của nó',N'Khả năng một hàm, thủ tục được sử dụng lại',N'Khả năng một thông điệp có thể thay đổi cách thể hiện của nó theo lớp cụ thể của đối tượng được nhận thông điệp','D')
+INSERT INTO CauHoi VALUES (N'Đặc điểm cơ bản của lập trình hướng đối tượng thể hiện ở:','006',N'Tính đóng gói, tính kế thừa, tính đa hình, tính đặc biệt hóa',N'Tính đóng gói , tính trừu tượng',N'Tính chia nhỏ, tính kế thừa',N'Tính đóng gói, tính kế thừa, tính đa hình, tính trừu tượng','D')
+INSERT INTO CauHoi VALUES (N'Hãy chọn câu trả lời đúng: ','006',N'Ngôn ngữ lập trình C, C++, C# là ngôn ngữ lập trình cấu trúc',N'Ngôn ngữ lập trình C# , C++ là ngôn ngữ lập trình hướng đối tượng',N'Ngôn ngữ lập trình pascal, C là ngôn ngữ lập trình cấu trúc',N'Ngôn ngữ lập trình C++, Java là ngôn ngữ lập trình cấu trúc','C')
+INSERT INTO CauHoi VALUES (N'Sự đóng gói còn gọi là: ','006','Polymorphism','Abstraction','Encapsulation','Inheritance','C')
+INSERT INTO CauHoi VALUES (N'Sự trừu tượng còn gọi là','006','Polymorphism','Abstraction','Encapsulation','Inheritance','B')
+INSERT INTO CauHoi VALUES (N'Sự kế thừa còn gọi là','006','Polymorphism','Abstraction','Encapsulation','Inheritance','D')
+INSERT INTO CauHoi VALUES (N'Tính đa hình còn gọi là','006','Polymorphism','Abstraction','Encapsulation','Inheritance','A')
+INSERT INTO CauHoi VALUES (N'Lớp đối tượng là: ','006',N'Một thể hiện cụ thể cho các đối tượng',N'Tập các phần tử cùng loại',N'Tập các giá trị cũng loại',N'Một thiết kế hay mẫu cho các đối tượng cũng kiểu','D')
+INSERT INTO CauHoi VALUES (N'Đối tượng là:','006',N'Một thực thể cụ thể trong thế giới thực',N'Một lớp vật chất trong thế giới thực',N'Một vật chất trong thế giới thực',N'Một mẫu hay một thiết kế cho mọi lớp đối tượng','A')
+INSERT INTO CauHoi VALUES (N'Chọn câu đúng:','006',N'Tại chương trình chính chỉ có thể truy cập đến thành phần public của lớp',N'Tại chương trình chính chỉ có thể truy cập đến thành phần private của lớp',N'Tại chương trình chính chỉ có thể truy cập đến bất kì thành phần nào của lớp',N'Tại chương trình chính không thể truy cập đến bất kì thành phần nào của lớp','A')
+INSERT INTO CauHoi VALUES (N'Trong một chương trình có thể xây dựng tối đa bao nhiêu lớp:','006',N'1 lớp duy nhát','3','10',N'tùy bộ nhớ','D')
+
+
+
+
+INSERT INTO CauHoi VALUES (N'Thao tác POP(x) dùng trong Stack là để:', '006', N'Xóa bỏ một phần tử bất kì khỏi Stack', N'Xóa bỏ một dãy các phần tử ra khỏi Stack', N'Lấy phần tử đầu tiên ra khỏi Stack', N'Lấy một phần tử cuối cùng ra khỏi đỉnh Stack', 'D')
+INSERT INTO CauHoi VALUES (N'Thao tác Push(x) dùng trong Stack là để:','006',N'Bổ sung một dãy các phần tử vào đỉnh Stack',N'Bổ sung một phần tử bất kì vào Stack',N'Bổ sung một phần tử vào đỉnh Stack',N'Bổ sung một phần tử vào đầu Stack','C')
+INSERT INTO CauHoi VALUES (N'Cho Stack gồm 5 phần tử {12, 5, 20, 23, 25}, trong đó 25 là phần tử ở đỉnh Stack. Để lấy ra phần tử thứ 4 trong Stack ta phải làm thế nào?', '006','POP(25),POP(23), PUSH(25)','POP(23),PUSH(25)','POP(25),PUSH(23)','POP(25),POP(23)','A')
+INSERT INTO CauHoi VALUES (N'Trong biểu diễn dữ liệu dưới dạng cây, cấp của cây chính: ','006',N'Tổng số nút trên cây',N'Cấp cao nhất của nút gốc', N'Cấp cao nhất của nút lá',N'Cấp cao nhất của một nút trên cây','D')
+INSERT INTO CauHoi VALUES (N'Trong các giải thuật sắp xếp, giải thuật nào áp dụng phương pháp "Chia để trị"?', '006', N'Quick sort, Heap sort', 'Quick sort, Insert sort', 'Quick sort, Merge sort', 'Quick sort, Bubble sort', 'C')
+INSERT INTO CauHoi VALUES (N'Hàng đợi còn được gọi là danh sách kiểu: ','006','LIFO','FILO','LOLO','FIFO','D')
+INSERT INTO CauHoi VALUES (N'Ý tưởng phương pháp sắp xếp nổi bọt (bubble sort) là: ','006',N'So sánh hai phần tử kề nhau nếu chưa đúng thì đổi chỗ',N'Dựa vào tư tưởng "chia để trị"',N'Chọn phần tử bé nhất xếp vào vị trí thứ nhất,tương tự đối với phần tử nhỏ thứ hai,ba...',N'Lần lượt lấy phần tử của danh sách chèn vị trí thích hợp của danh sách đã sắp','A')
+INSERT INTO CauHoi VALUES (N'Giải thuật đệ quy là:','006',N'Trong giải thuật của nó có lời gọi tới một giải thuật khác đã biết kết quả',N'Trong giải thuật của nó có lời gọi tới chính nó nhưng với phạm vi lớn hơn',N'Trong giải thuật của nó có lời gọi tới chính nó',N'Trong giải thuật của nó có lời gọi tới chính nó nhưng với phạm vi nhỏ hơn','D')
+INSERT INTO CauHoi VALUES (N'Danh sách tuyến tính dạng ngăn xếp làm việc theo nguyên tắc:','006','FIFO','LIFO','LILO','FOLO','B')
+INSERT INTO CauHoi VALUES (N'Trong biểu diễn dữ liệu dưới dạng cây, nút có cấp bằng 0 gọi là:','006',N'Lá',N'Gốc',N'Ngọn',N'Nhánh','A')
+INSERT INTO CauHoi VALUES (N'Khi lưu trữ cây nhị phân dưới dạng mảng, nếu vị trí của nút cha trong mảng là i thì vịtrí của nút con trái là:','006','2*i+1','i+1','2*i','i-1','C')
+INSERT INTO CauHoi VALUES (N'Khi lưu trữ cây nhị phân dưới dạng mảng, nếu vị trí của nút cha trong mảng là 3 thì vị trí tương ứng của nút con trái sẽ là:','006','7','6','2','4','B')
+INSERT INTO CauHoi VALUES (N'Khi lưu trữ cây nhị phân dưới dạng mảng, nếu vị trí của nút cha trong mảng là 3 thì vị trí tương ứng của nút con phải  sẽ là:','006','7','6','2','4','A')
+INSERT INTO CauHoi VALUES (N'Phương pháp sắp xếp nhanh (Quick sort) chính là phương pháp:','006',N'Phân đoạn',N'Chèn',N'Trộn',N'Vun đống','A')
+INSERT INTO CauHoi VALUES (N'Cho dãy số sau: 14 32 10 43 57 87 55 36 97 11. Áp dụng phương pháp tìm kiếm tuần tự, sau bao nhiều lần thực hiện phép so sánh ta sẽ tìm thấy số 43?','006','2','3','4','5','C')
+INSERT INTO CauHoi VALUES (N'Cho dãy số sau: 14 32 10 43 57 87 55 36 97 11. Áp dụng phương pháp tìm kiếm nhị phân, sau bao nhiều lần thực hiện phép so sánh ta sẽ tìm thấy số 43?','006','2','3','4','5','B')
+INSERT INTO CauHoi VALUES (N'Cho dãy số sau: 10 11 14 32 36 43 55 57 87 97. Áp dụng phương pháp tìm kiếm nhị phân, để tìm kiếm số 97, lần phân đoạn thứ hai của dãy sẽ là:','006','[36 97 11]','[36 11]','[36 97]','[87 97]','D')
+
+
+INSERT INTO CauHoi VALUES (N'Giao thức nào thuộc tầng Application?','006','TCP','HTTP','NFS','IP','B')
+INSERT INTO CauHoi VALUES (N'Địa chỉ IPv6 gồm bao nhiêu bit', '006','32','48','64','128','D')
+INSERT INTO CauHoi VALUES (N'TCP làm việc ở lớp nào của mô hình OSI?','006','Layer 4','Layer 5','Layer 6','Layer 7','A')
+INSERT INTO CauHoi VALUES (N'Để kết nối Router với Router ta dùng:','006',N'Cáp chéo (Cross-Cable)',N'Cáp thẳng (Straight Cable)','Rollover Cable',N'Tất cả đều sai','A')
+INSERT INTO CauHoi VALUES (N'Lệnh nào sau đây cho biết địa chỉ IP của máy tính:','006','IP','IPCONFIG','FTP','TCP_IP','B')
+INSERT INTO CauHoi VALUES (N'Checksum trong gói dữ liệu UDP có độ dài:','006','4 bit','8 bit', '16 bit','32 bit', 'B')
+INSERT INTO CauHoi VALUES (N'SMTP sử dụng cổng số bao nhiêu:','006','143','25','80','225','B')
+INSERT INTO CauHoi VALUES (N'Phản hồi nào cho biết client đang yêu cầu thông điệp không tồn tại trên máy chủ?','006','200 OK','400 Bad Request','301 Moved Permanently','404 Not Found','D')
+INSERT INTO CauHoi VALUES (N'Các đơn vị dữ liệu giao thức trong mô hình OSI được gọi là:','006','UDP','OSI','PDU','Packet','C')
+INSERT INTO CauHoi VALUES (N'Trong giao thức HTTP, phương thức nào được sử dụng để yêu cầu dữ liệu từ máy chủ?','006','GET','POST','PUT','DELETE','A')
+INSERT INTO CauHoi VALUES (N'Trong giao thức DNS, bản ghi nào được sử dụng để ánh xạ tên miền thành địa chỉ IP?','006','A','CNAME','MX','PTR','A')
+INSERT INTO CauHoi VALUES (N'RDT sử dụng cơ chế nào để đồng bộ hóa quá trình truyền tin giữa người gửi và người nhận?','006','Go-Back-N','Selective Repeat','Stop-and-Wait','Piggybacking','C')
+INSERT INTO CauHoi VALUES (N'Thứ tự đúng từ trên xuống dưới trong mô hình chồng giao thức Internet phân tầng','006','Application – Transport – Network – Physical – Link','Physical – Link – Network – Transport - Application',' Application – Network – Transport – Link - Physical
+','Application – Transport – Network – Link – Physical','D')
+INSERT INTO CauHoi VALUES (N'Băng thông là gì?','006',N'Tốc độ (đơn vị bits/sec) mà tại đó các bits được truyền',N'Khoảng thời gian truyền mỗi gói tin trên mạng',N'Thời gian chờ của mỗi gói tin khi truyền đi',N'Lượng dữ liệu truyền tối đa trong một đơn vị thời gian','D')
+INSERT INTO CauHoi VALUES (N'Độ trễ mạng là gì?','006',N'Là khoảng thời gian truyền mỗi gói tin trên mạng',N'Tốc độ truyền mỗi gói tin chậm hơn so với bình thường',N'Hàng đợi bị đầy, nên gây hiện tượng trễ mạng',N'Gói tin bị mất trong quá trình truyền dữ liệu','B')
+INSERT INTO CauHoi VALUES (N'Mô hình OSI có bao nhiêu lớp: ','006','5','7','6','8','B')
+INSERT INTO CauHoi VALUES (N'Khi gói dữ liệu di chuyển từ lớp cao xuống lớp thấp hơn thì các header được:','006',N'Loại bỏ dần',N'Thêm vào dần',N'Sắp xếp lại',N'Đổi vị trí','B')
+INSERT INTO CauHoi VALUES (N'Trong RDT, việc xác định thứ tự của các gói tin dựa trên cơ chế nào?','006','Sequence Number','Acknowledgment','Window Size','Timeout','A')
+INSERT INTO CauHoi VALUES (N'Đơn vị dữ liệu theo các tầng trong mô hình TCP/IP: ','006','Data, Packet, Segment, Bit, Frame','Data, Packet, Segment, Frame, Bit','Data, Segment, Packet, Frame, Bit',' Data, Segment, Packet, Bit, Frame','C')
+INSERT INTO CauHoi VALUES (N'Trong giao thức FTP (File Transfer Protocol), cổng kết nối dữ liệu TCP trên máy chủ là:','006','20','21','22','23','A')
+INSERT INTO CauHoi VALUES (N'Truy cập vào trang web 4 lần với 4 mqax trạng thái lần lượt nhận là 200,304,404,502, số lân xem nội dung web thành công là?','006','1','2','3','4','B')
+INSERT INTO CauHoi VALUES (N'Mục đích số port trong header của TCP và UDP là gì?','006',N'Bắt đầu quá trình bắt tay 3 bước',N'Tập hợp các segment cho đúng thứ tự',N'Xác định số lượng segment có thể gửi được cùng lức mà không cần ACK',N'Xác định tiến trình đang gửi nhận dữ liệu','D')
+INSERT INTO CauHoi VALUES (N'Giao thức RDT nào cung cấp dịch vự giao hàng tin cậy','006','RDT 1.0','RDT 2.1','RDT 2.2','RDT 3.0','D')
+
+
+
+INSERT INTO CauHoi VALUES (N'Chọn phát biểu SAI về các tác vụ đối với tiến trình?','006',N' Tiến trình con nhận tài nguyên từ hệ điều hành hoặc từ tiến trình cha.',N'Không gian địa chỉ của tiến trình con luôn được nhân bản từ tiến trình cha.',N'Tiến trình có thể tự kết thúc hoặc bị kết thúc bởi tiến trình khác.',N'Tiến trình con chỉ có thể sử dụng một phần hoặc toàn bộ tài nguyên của tiến trình cha','B')
+INSERT INTO CauHoi VALUES (N'Chọn phát biểu ĐÚNG về cơ chế phân trang?','006',N'Bộ nhớ vật lý được chia thành các khung trang còn bộ nhớ luận lý được chia thành các trang',N' Hệ điều hành tạo một bảng phân trang cho tất cả các tiến trình',N'Thanh ghi page-table length (PTLR) xác định vị trí của bảng phân trang',N'Kích thước của bảng phân trang được xác định bởi thanh ghi page-table base (PTBR)','A')
+INSERT INTO CauHoi VALUES (N'Các giải pháp đồng bộ được chia thành những nhóm nào?','006','Busy Waiting – Sleep & Wakeup','Busy Waiting –Circular Wait','Sleep & Wakeup – Hold & Wait','Sleep & Wakeup – Mutual Exclusion','A')
+INSERT INTO CauHoi VALUES (N'Chọn phát biểu SAI trong các phát biểu sau?','006',N'Nếu hệ thống đang ở trạng thái an toàn thì tồn tại ít nhất một chuỗi thứ tự an toàn trong hệ thống',N'Nếu đồ thị cấp phát tài nguyên có chu trình thì có deadlock xảy ra',N'Nếu hệ thống đang ở trạng thái không an toàn thì có thể xảy ra deadlock',N'Một tiến trình gọi là deadlock nếu nó đang đợi một sự kiện mà sẽ không bao giờ xảy ra','B')
+INSERT INTO CauHoi VALUES (N'Kỹ thuật cài đặt bộ nhớ ảo nào sau đây cho phép các trang của tiến trình chỉ được nạp vào bộ nhớ chính khi được yêu cầu?','006','Dynamic loading','Dynamic linking','Demand paging','Frame allocation','C')
+INSERT INTO CauHoi VALUES (N'Trong giải thuật thay trang LRU, trang được chọn để thay thế có đặc điểm gì?','006',N'Trang nhớ có thời điểm tham chiếu nhỏ nhất',N'Trang nhớ được tham chiếu trễ nhất trong tương lai',N'Trang nhớ đầu tiên được nạp vào hệ thống',N'Trang nhớ vừa được thay thế gần đây nhất','A')
+INSERT INTO CauHoi VALUES (N'“Không cho phép (ít nhất) một trong 4 điều kiện cần cho deadlock” là đặc điểm của phương pháp giải quyết deadlock nào?','006',N'Tránh deadlock',N'Ngăn deadlock',N'Bỏ qua deadlock',N'Phát hiện deadlock và phục hồi hệ thống','B')
+INSERT INTO CauHoi VALUES (N'Địa chỉ lệnh và dữ liệu có thể được chuyển đổi thành địa chỉ thực tại thời điểm biên dịch nếu thỏa mãn điều kiện nào?','006',N'Địa chỉ nạp chương trình (trong bộ nhớ) phải được biết trước',N'Kích thước chương trình phải được biết trước',N'Bộ nhớ phải được chia thành các phân vùng có kích thước bằng nhau',N'Trong quá trình thực thi, tiến trình chỉcó thể di chuyển trên một tập các trang nhớ cho trước','A')
+INSERT INTO CauHoi VALUES (N'Lựa chọn nào dưới đây KHÔNG phải là một mô hình đa tiểu trình?','006','Many-to-One','One-to-One','Many-to-Many','One-to-Many','D')
+INSERT INTO CauHoi VALUES (N'Tiến trình ở trạng thái terminated khi nào?','006',N'Tiến trình vừa được tạo',N'Tiến trình đã có đủ tài nguyên, chỉ còn cần CPU',N'Tiến trình đã kết thúc',N'Các lệnh của tiến trình đang được thực thi','C')
+INSERT INTO CauHoi VALUES (N'Kiểu cấu trúc hệ điều hành nào là sự kết hợp nhiều cách tiếp cận để giải quyết các nhu cầu về hiệu suất, bảo mật, nhu cầu sử dụng?','006',N'Cấu trúc modules',N'Cấu trúc phân lớp (layer)',N'Cấu trúc vi nhân',N'Cấu trúc lai (hybrid)','D')
+INSERT INTO CauHoi VALUES (N'Kiểu cấu trúc hệ điều hành nào sử dụng cách tiếp cận hướng đối tượng với mỗi core thành phần là tách biệt nhau?','006',N'Cấu trúc modules',N'Cấu trúc phân lớp (layer)',N'Cấu trúc vi nhân',N'Cấu trúc Monolithic','A')
+INSERT INTO CauHoi VALUES (N'Trong tiến trình đa luồng, các tiểu trình KHÔNG chia sẻ chung thành phần nào dưới đây?','006','Code','Data','Registers','Resources (files)','A')
+INSERT INTO CauHoi VALUES (N'Khi một tiến trình được nạp vào bộ nhớ, các biến cục bộ của nó được chứa ở đâu?','006','Stack section','Data section','Text section','Heap section','C')
+INSERT INTO CauHoi VALUES (N'Lời gọi hệ thống chủ yếu được truy cập thông qua phương tiện nào?','006','Graphics User Interface','Command Line Interface','Application Programming Interface','Command Line Interpreter','C')
+INSERT INTO CauHoi VALUES (N'Cơ chế kết khối có thể được sử dụng để giải quyết vấn đề nào dưới đây?','006',N'Phân mảnh ngoại',N'Phân mảnh nội',N'Lỗi trang',N'Các trang nhớ bị hoán chuyển vào ra liên tục','A')
+INSERT INTO CauHoi VALUES (N'Đoạn mã chứa các thao tác lên dữ liệu chia sẻ trong mỗi tiến trình được gọi là gì?','006',N'Vùng tranh chấp',N'Loại trừ tương hỗ',N'Deadlock',N'Chuỗi an toàn','A')
+INSERT INTO CauHoi VALUES (N'Đặc điểm chung của nhóm giải pháp đồng bộ “Sleep & Wakeup” là gì?','006',N'Tiến trình tiếp tục tiêu thụCPU khi chưa được vào vùng tranh chấp',N'Cần có sự hỗ trợ của hệ điều hành',N'Cần có sự hỗ trợ của phần cứng',N'Không bao giờ xảy ra tình trạng đói tài nguyên','B')
+INSERT INTO CauHoi VALUES (N'Nếu bảng phân trang được lưu giữ trong bộ nhớ chính thì kích thước của nó sẽ được xác định bởi thành phần nào?','006','TLBs',N'Thanh ghi page-table length',N'Thanh ghi page-table base',N'Số bit dùng để biểu diễn không gian địa chỉ','B')
+INSERT INTO CauHoi VALUES (N'Trong hệ thống máy tính, người dùng phát lệnh cho Hệ điều hành thực thi thông qua lớp nào?','006','Shell','Driver','Kernel','Hardware','A')
+INSERT INTO CauHoi VALUES (N'“Cấp phát không gian lưu trữ” là một trong những chức năng của thành phần nào trong hệ điều hành?','006',N'Quản lý bộ nhớ chính',N'Quản lý hệ thống lưu trữ thứ cấp',N'Quản lý hệ thống I/O',N'Quản lý tiến trình','B')
+INSERT INTO CauHoi VALUES (N'Bộ định thời nào có chức năng xác định chương trình được chấp nhận nạp vào hệ thống để thực thi?','006',N'Bộ định thời ngắn',N'Bộ định thời dài', N'Bộ định thời trung gian',N'Bộ định thời thiết bị','B')
+INSERT INTO CauHoi VALUES (N'Định thời theo cách tiếp cận đa xử lý đối xứng có đặc điểm nào dưới đây?','006',N'Chỉ một bộ xử lý truy xuất dữ liệu hệ thống, không cần chia sẻ dữ liệu',N'Mỗi bộ xử lý tự định thời cho chính nó',N'Tất cả các thao tác lập lịch, xử lý I/O được thực hiện bởi một bộ xử lý (master server)',N'Master server có thể bị nghẽn cổ chai (bottleneck), làm giảm hiệu năng của hệ thống','B')
+INSERT INTO CauHoi VALUES (N'“Cung cấp cơ chế kiểm soát đăng nhập/ xuất” là một trong những nhiệm vụ của thành phần nào trong hệ điều hành?','006',N'Quản lý bộ nhớ chính',N'Hệ thống thông dịch lệnh',N'Quản lý tiến trình',N'Hệ thống bảo vệ','D')
+INSERT INTO CauHoi VALUES (N'Bộ định thời ngắn được sử dụng để làm gì?', '006',N'Quyết định tiến trình nào được đưa vào (swap in) và đưa ra khỏi (swap out) bộ nhớ chính trong quá trình thực thi của hệ thống',N' Xác định tiến trình nào trong hàng đợi sẵn sàng (ready queue) sẽ được chiếm CPU để thực thi kế tiếp',N'Xác định chương trình nào được chấp nhận nạp vào hệ thống để thực thi',N'Xử lý các thao tác nhập/xuất','B')
+INSERT INTO CauHoi VALUES (N'Dispatch latency là gì?','006',N'Thời gian từlúc tiến trình nhận yêu cầu cho đến khi được đáp ứng lần đầu',N'Thời gian mà bộ định thời dừng một tiến trình và khởi động một tiến trình khác',N'Tổng thời gian một tiến trình đợi trong hàng đợi ready',N'Thời điểm thực thi hàm lựa chọn','B')
+INSERT INTO CauHoi VALUES (N'Bộ định thời nào có chức năng chuyển tiến trình từ bộ nhớ sang đĩa cũng như chuyển tiến trình từ đĩa vào bộ nhớ?','006','Medium-term scheduler','Short-term scheduler','Long-term scheduler','Job scheduler','A')
+INSERT INTO CauHoi VALUES (N'Các máy tính trong hệ thống đều ngang hàng nhau; Không có cơ sở dữ liệu tập trung. Là loại mô hình hệ thống phân tán nào dưới đây?', '006','Client - server','peer - to - peer','Symmetric multiprocessor','Master-slave','B')
+INSERT INTO CauHoi VALUES (N'Để cho phép một tiến trình đợi trong monitor, cần phải khai báo loại biến nào?','006',N'Biến điều kiện', N'Biến cục bộ',N'Biến hàng đợi', N'Biến thủ tục','A')
+
+
+
+
+
+
+
+
+
